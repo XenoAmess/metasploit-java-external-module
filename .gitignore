@@ -1,0 +1,64 @@
+﻿/jre/
+/bin/
+/out/
+/target/
+
+**/target
+**/out
+*.iml
+**/.idea
+*.class
+target/
+.project
+.settings/
+.classpath
+
+**/.scannerwork
+
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+replay_pid*
+
+
+# project settings
+
+/lwjgl3-master/
+
+#/resources
+
+/run_build.lnk
+/test*
+/src/main/java/org/lwjgl/demo
+/log.txt
+
+**/logs
+*.log
+*.MF
+
+build8.cmd
+build9.cmd
+**/pom.xml.versionsBackup
+/extracted_code.docx
+/Gamepad_Massage_for_Beta_Testing_1_key_pkg330019_start0_num100.txt
+/About_how_he_earned_a_suite_from_T-Financial_Platform_in_four_months_for_Beta_Testing_1_key_pkg241881_start0_num300.txt
