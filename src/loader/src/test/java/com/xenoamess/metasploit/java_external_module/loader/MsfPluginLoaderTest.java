@@ -4,6 +4,7 @@ import java.io.File;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import org.apache.commons.io.FileUtils;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -22,5 +23,12 @@ public class MsfPluginLoaderTest {
                 "0123456789",
                 testTempFileContent
         );
+    }
+
+    @Disabled
+    @Test
+    public void test2() throws Exception {
+        URL testClassFileUrl = this.getClass().getClassLoader().getResource("single_java_file_demo_scanner.java");
+        MsfPluginLoader.main(new String[]{testClassFileUrl.getPath()});
     }
 }
