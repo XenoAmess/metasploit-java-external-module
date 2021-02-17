@@ -1,6 +1,5 @@
 package com.xenoamess.metasploit.java_external_module.single_java_file_demo;
 
-import com.xenoamess.metasploit.java_external_module.core.constants.MsfPluginResourceUrlStrings;
 import com.xenoamess.metasploit.java_external_module.core.contexts.MsfContext;
 import com.xenoamess.metasploit.java_external_module.core.entities.MsfRequest;
 import com.xenoamess.metasploit.java_external_module.core.enums.MsfLogLevelEnum;
