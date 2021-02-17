@@ -1,4 +1,4 @@
-package com.xenoamess.metasploit.java_external_module.demo;
+package com.xenoamess.metasploit.java_external_module.single_java_file_demo;
 
 import com.xenoamess.metasploit.java_external_module.core.constants.MsfPluginResourceUrlStrings;
 import com.xenoamess.metasploit.java_external_module.core.contexts.MsfContext;
@@ -8,7 +8,7 @@ import com.xenoamess.metasploit.java_external_module.core.handle.impl.MsfDescrib
 import com.xenoamess.metasploit.java_external_module.core.handle.impl.MsfRunHandler;
 import com.xenoamess.metasploit.java_external_module.core.utils.MsfCommandLineUtil;
 
-public class MsfPluginEntrance {
+public class single_java_file_demo_scanner {
 
     /**
      * your code here
@@ -19,13 +19,14 @@ public class MsfPluginEntrance {
     public Object handleRun(MsfRequest msfRequest) throws Throwable {
         MsfCommandLineUtil.logJson(MsfLogLevelEnum.INFO, "Your input is : ");
         MsfCommandLineUtil.logJson(MsfLogLevelEnum.INFO, msfRequest);
-        MsfCommandLineUtil.logJson(MsfLogLevelEnum.GOOD, "Warlock XenoAmess here. Welcome to world of Java.");
+        MsfCommandLineUtil.logJson(MsfLogLevelEnum.GOOD, "XenoAmess here. Welcome to world of Java.");
+        MsfCommandLineUtil.logJson(MsfLogLevelEnum.GOOD, "This is single java file demo.");
         MsfCommandLineUtil.reportRaw("find", "this demo run successfully and find the world full of joy!");
         return msfRequest.getParams();
     }
 
     public static void main(String[] args) {
-        MsfPluginEntrance msfPluginEntrance = new MsfPluginEntrance();
+        single_java_file_demo_scanner msfPluginEntrance = new single_java_file_demo_scanner();
         MsfContext msfContext = new MsfContext(
                 new MsfDescribeHandler(MsfPluginResourceUrlStrings.METADATA),
                 new MsfRunHandler(msfPluginEntrance::handleRun)

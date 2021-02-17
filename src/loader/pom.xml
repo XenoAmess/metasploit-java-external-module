@@ -3,16 +3,17 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>demo</artifactId>
+    <artifactId>loader</artifactId>
     <parent>
         <groupId>com.xenoamess.metasploit.java-external-module</groupId>
         <artifactId>parent</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>0.0.2-SNAPSHOT</version>
         <relativePath>../parent/pom.xml</relativePath>
     </parent>
     <packaging>jar</packaging>
     <name>${project.artifactId}</name>
-    <description>a demo java external module for metasploit framework.
+    <description>a single-java-file loader for java external module for
+        metasploit framework.
     </description>
     <url>null</url>
     <licenses>
@@ -37,9 +38,10 @@
     </scm>
 
     <properties>
+        <dubbo.version>2.7.8</dubbo.version>
         <!--important config-->
         <mainClass>
-            com.xenoamess.metasploit.java_external_module.demo.MsfPluginEntrance
+            com.xenoamess.metasploit.java_external_module.loader.MsfPluginLoader
         </mainClass>
     </properties>
 
@@ -49,5 +51,24 @@
             <artifactId>core</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo-common</artifactId>
+            <version>${dubbo.version}</version>
+        </dependency>
+        <!--test start-->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit-jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit-jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <!--test end-->
     </dependencies>
 </project>

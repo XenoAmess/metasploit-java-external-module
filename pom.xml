@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.xenoamess.metasploit.java-external-module</groupId>
     <artifactId>project</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.2-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>${project.artifactId}</name>
     <description>java external module for metasploit framework.</description>
@@ -19,7 +19,9 @@
     <modules>
         <module>src/parent</module>
         <module>src/core</module>
-        <module>src/demo</module>
+        <module>src/loader</module>
+        <module>src/jar_demo</module>
+        <module>src/single_java_file_demo</module>
     </modules>
     <developers>
         <developer>

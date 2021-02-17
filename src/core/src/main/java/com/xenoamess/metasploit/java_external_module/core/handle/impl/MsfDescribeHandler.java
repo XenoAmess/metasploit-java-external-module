@@ -1,5 +1,6 @@
 package com.xenoamess.metasploit.java_external_module.core.handle.impl;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.xenoamess.metasploit.java_external_module.core.constants.MsfPluginResourceUrlStrings;
 import com.xenoamess.metasploit.java_external_module.core.entities.MsfRequest;
@@ -24,20 +25,56 @@ public class MsfDescribeHandler implements MsfRequestHandler<MsfRequest, MsfResp
     private JsonNode msfMetadata;
 
     public MsfDescribeHandler() {
-        this.initMsfMetadata(MsfPluginResourceUrlStrings.METADATA);
+        this(MsfPluginResourceUrlStrings.METADATA, CreateFromEnum.RESOURCE_PATH);
     }
 
-    public MsfDescribeHandler(String metadataFilePath) {
-        this.initMsfMetadata(metadataFilePath);
+    public MsfDescribeHandler(String metadataResourcePath) {
+        this(metadataResourcePath, CreateFromEnum.RESOURCE_PATH);
     }
 
-    private void initMsfMetadata(String metadataFilePath) {
+    public enum CreateFromEnum {
+        /**
+         * should treat the string param as resource path
+         */
+        RESOURCE_PATH,
+
+        /**
+         * should treat the string param as content
+         */
+        CONTENT_STRING;
+    }
+
+    public MsfDescribeHandler(@NotNull String string, @Nullable CreateFromEnum createFromEnum) {
+        //if createFromEnum == null then do nothing
+        if (createFromEnum != null) {
+            switch (createFromEnum) {
+                case RESOURCE_PATH:
+                    this.initMsfMetadataFromResourcePath(string);
+                    break;
+                case CONTENT_STRING:
+                    this.initMsfMetadataFromContentString(string);
+                    break;
+                default:
+                    //do nothing
+            }
+        }
+    }
+
+    private void initMsfMetadataFromResourcePath(String metadataFilePath) {
         try (
                 InputStream msfMetadataInputStream =
                         this.getClass().getClassLoader().getResourceAsStream(metadataFilePath);
         ) {
             this.msfMetadata = JsonUtil.getObjectMapper().readValue(msfMetadataInputStream, JsonNode.class);
         } catch (IOException e) {
+            LOGGER.error("cannot load msfMetadata:", e);
+        }
+    }
+
+    private void initMsfMetadataFromContentString(String metadataContent) {
+        try {
+            this.msfMetadata = JsonUtil.getObjectMapper().readValue(metadataContent, JsonNode.class);
+        } catch (JsonProcessingException e) {
             LOGGER.error("cannot load msfMetadata:", e);
         }
     }
