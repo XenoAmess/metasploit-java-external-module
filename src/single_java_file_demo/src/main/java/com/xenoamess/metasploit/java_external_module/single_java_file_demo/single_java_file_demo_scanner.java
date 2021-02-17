@@ -10,6 +10,26 @@ import com.xenoamess.metasploit.java_external_module.core.utils.MsfCommandLineUt
 
 public class single_java_file_demo_scanner {
 
+    public static final String METADATA = "{\n" +
+            "  \"name\": \"Msf Java External Module Demo : single java file\",\n" +
+            "  \"description\": \"\\n        Demo for Msf Java external module\\n        Will just return the params " +
+            "you set and do nothing else.\\n     \",\n" +
+            "  \"authors\": [\n" +
+            "    \"XenoAmess <xenoamess@gmail.com>\"\n" +
+            "  ],\n" +
+            "  \"date\": \"2021-02-17\",\n" +
+            "  \"references\": [\n" +
+            "    {\n" +
+            "      \"type\": \"url\",\n" +
+            "      \"ref\": \"https://github.com/XenoAmess/\"\n" +
+            "    }\n" +
+            "  ],\n" +
+            "  \"type\": \"dos\",\n" +
+            "  \"options\": {\n" +
+            "  }\n" +
+            "}\n" +
+            "\n";
+
     /**
      * your code here
      * @param msfRequest msfRequest
@@ -28,7 +48,7 @@ public class single_java_file_demo_scanner {
     public static void main(String[] args) {
         single_java_file_demo_scanner msfPluginEntrance = new single_java_file_demo_scanner();
         MsfContext msfContext = new MsfContext(
-                new MsfDescribeHandler(MsfPluginResourceUrlStrings.METADATA),
+                new MsfDescribeHandler(METADATA, MsfDescribeHandler.CreateFromEnum.CONTENT_STRING),
                 new MsfRunHandler(msfPluginEntrance::handleRun)
         );
         msfContext.run(args);

@@ -52,3 +52,5 @@ replay_pid*
 *.MF
 
 *.versionsBackup
+
+!java_external_module_loader.jar
