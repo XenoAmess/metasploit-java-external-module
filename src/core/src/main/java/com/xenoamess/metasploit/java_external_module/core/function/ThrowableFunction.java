@@ -7,6 +7,7 @@ public interface ThrowableFunction<T, R> {
      *
      * @param t the function argument
      * @return the function result
+     * @throws Throwable when error
      */
     R apply(T t) throws Throwable;
 }

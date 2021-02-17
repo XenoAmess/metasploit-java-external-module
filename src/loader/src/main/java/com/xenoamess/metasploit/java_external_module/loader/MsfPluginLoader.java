@@ -50,7 +50,7 @@ public class MsfPluginLoader {
                 );
             } catch (JsonProcessingException ignored) {
             }
-            LOGGER.error("module file load failed : {}", moduleFileName, e);
+            LOGGER.error("module file load failed : " + moduleFileName, e);
             return;
         }
 
@@ -70,7 +70,7 @@ public class MsfPluginLoader {
                 );
             } catch (JsonProcessingException ignored) {
             }
-            LOGGER.error("module compile failed : {}", moduleFileName, throwable);
+            LOGGER.error("module compile failed : " + moduleFileName, throwable);
             return;
         }
 
@@ -85,7 +85,7 @@ public class MsfPluginLoader {
                 );
             } catch (JsonProcessingException ignored) {
             }
-            LOGGER.error("module find main method failed : {}", moduleFileName, e);
+            LOGGER.error("module find main method failed : " + moduleFileName, e);
             return;
         }
 
@@ -99,7 +99,7 @@ public class MsfPluginLoader {
                 );
             } catch (JsonProcessingException ignored) {
             }
-            LOGGER.error("module invoke failed : {}", moduleFileName, e);
+            LOGGER.error("module invoke failed : " + moduleFileName, e);
             return;
         }
 

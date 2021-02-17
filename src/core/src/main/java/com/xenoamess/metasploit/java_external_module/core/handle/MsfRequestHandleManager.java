@@ -9,8 +9,6 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * manager class for MsfRequestHandler
- *
- * @author XenoAmess
  */
 public class MsfRequestHandleManager {
 

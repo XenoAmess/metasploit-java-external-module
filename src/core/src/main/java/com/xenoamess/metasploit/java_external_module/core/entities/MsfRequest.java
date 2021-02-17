@@ -6,8 +6,6 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * MsfRequest class.
- *
- * @author XenoAmess
  */
 public class MsfRequest {
     /**

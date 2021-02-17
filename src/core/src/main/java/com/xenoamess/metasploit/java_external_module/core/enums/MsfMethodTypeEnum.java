@@ -10,7 +10,9 @@ public enum MsfMethodTypeEnum {
     DESCRIBE("describe"),
 
     /**
-     * TODO what the hell is this? anyway, both Python and Go external module did not really implement it, so neither will I.
+     * what the hell is this?
+     * anyway, both Python and Go external module did not really implement it,
+     * so neither will I.
      */
     SOFT_CHECK("soft_check"),
 

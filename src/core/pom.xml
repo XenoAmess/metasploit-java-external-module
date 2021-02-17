@@ -68,7 +68,9 @@
         <maven-dependency-plugin.version>3.1.2</maven-dependency-plugin.version>
         <jacoco-maven-plugin.version>0.8.5</jacoco-maven-plugin.version>
         <!--important config-->
-        <mainClass>com.xenoamess.metasploit.java_external_module.core.MsfPluginEntrance</mainClass>
+        <mainClass>
+            com.xenoamess.metasploit.java_external_module.core.MsfPluginEntrance
+        </mainClass>
     </properties>
 
     <dependencies>
@@ -106,18 +108,6 @@
             <groupId>com.fasterxml.jackson.datatype</groupId>
             <artifactId>jackson-datatype-jsr310</artifactId>
             <version>${jackson.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>${junit-jupiter.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>${junit-jupiter.version}</version>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
