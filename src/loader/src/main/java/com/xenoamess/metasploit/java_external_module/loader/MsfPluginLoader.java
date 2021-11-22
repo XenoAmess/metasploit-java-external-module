@@ -8,8 +8,11 @@ import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
+
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.ArrayUtils;
+import org.apache.dubbo.common.compiler.support.JdkCompiler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -22,7 +25,7 @@ public class MsfPluginLoader {
      * @param args args[0] should be module filePath
      */
     public static void main(String[] args) {
-        LOGGER.info("MsfPluginLoader invoked, args be : {}", args);
+        LOGGER.info("MsfPluginLoader invoked, args be : {}", Arrays.toString(args));
         if (ArrayUtils.isEmpty(args)) {
             try {
                 MsfCommandLineUtil.logJson(
@@ -54,11 +57,12 @@ public class MsfPluginLoader {
             return;
         }
 
-        Jdk8Compiler jdk8Compiler = new Jdk8Compiler();
+        JdkCompiler jdk8Compiler = new JdkCompiler("8");
 
         Class moduleClass = null;
         try {
             moduleClass = jdk8Compiler.doCompile(
+                    MsfPluginLoader.class.getClassLoader(),
                     moduleClassName,
                     moduleFileContent
             );
