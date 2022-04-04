@@ -38,7 +38,7 @@
     </scm>
 
     <properties>
-        <dubbo.version>3.0.5</dubbo.version>
+        <dubbo.version>3.0.7</dubbo.version>
         <!--important config-->
         <mainClass>
             com.xenoamess.metasploit.java_external_module.loader.MsfPluginLoader
