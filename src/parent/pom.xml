@@ -63,7 +63,7 @@
         <maven-assembly-plugin.version>3.3.0</maven-assembly-plugin.version>
         <versions-maven-plugin.version>2.10.0</versions-maven-plugin.version>
         <maven-dependency-plugin.version>3.3.0</maven-dependency-plugin.version>
-        <jacoco-maven-plugin.version>0.8.7</jacoco-maven-plugin.version>
+        <jacoco-maven-plugin.version>0.8.8</jacoco-maven-plugin.version>
         <mvnw.version>0.7.7</mvnw.version>
         <!--important config-->
         <mainClass>com.metasploit.plugin.java.MsfPluginEntrance</mainClass>
