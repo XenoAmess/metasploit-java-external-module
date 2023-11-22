@@ -46,7 +46,7 @@
         <!---->
         <!--libraries versions-->
         <annotations.version>24.1.0</annotations.version>
-        <commons-lang3.version>3.13.0</commons-lang3.version>
+        <commons-lang3.version>3.14.0</commons-lang3.version>
         <jackson.version>2.16.0</jackson.version>
         <log4j.version>2.22.0</log4j.version>
         <slf4j.version>1.7.36</slf4j.version>
