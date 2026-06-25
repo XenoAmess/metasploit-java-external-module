@@ -16,22 +16,6 @@ updates:
       - "dependencies"
       - "java"
 
-  - package-ecosystem: "maven"
-    directory: "/src/core"
-    schedule:
-      interval: "weekly"
-      day: "monday"
-      time: "04:00"
-      timezone: "Asia/Shanghai"
-    target-branch: "develop"
-    open-pull-requests-limit: 10
-    commit-message:
-      prefix: "build(deps)"
-      prefix-development: "build(deps-dev)"
-    labels:
-      - "dependencies"
-      - "java"
-
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
